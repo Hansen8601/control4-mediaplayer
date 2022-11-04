@@ -21,5 +21,8 @@ media_player:
 * **channel** (Required): Output channel of the AMP. 
 * **on_volume** (Optional): Default volume for the amp to turn on to. 5 if omitted
 
+### Work to do
+The component doesn't support sources yet. If there's an interest, I'll add it. For my configuration, I only use source 1.
+
 #### My Home Assistant Card
 ![MyCard](https://github.com/Hansen8601/control4-mediaplayer/blob/f7d66aa66f89b2b0bcf36ea5393bb76a07da0f32/Control4AmpCard.png)
