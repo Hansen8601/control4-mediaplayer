@@ -1,5 +1,8 @@
 # Control 4 Matrix Amp [[Home Assistant](https://www.home-assistant.io/) Component]
 
+#### Installation
+
+To install, simply copy the control4-mediaplayer folder into your CUSTOM_COMPONENTS folder and restart Home Assistant.
 
 #### Component Configuration
 ```yaml
