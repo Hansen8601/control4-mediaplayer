@@ -1,0 +1,8 @@
+{
+    "domain": "control4-mediaplayer",
+    "name": "Control4 Media Player",
+    "documentation": "https://github.com",
+    "requirements": [],
+    "codeowners": [],
+    "version": "1.0.0"
+}
