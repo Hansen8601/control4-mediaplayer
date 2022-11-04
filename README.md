@@ -22,4 +22,4 @@ media_player:
 * **on_volume** (Optional): Default volume for the amp to turn on to. 5 if omitted
 
 #### My Home Assistant Card
-![MyCard]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true](https://github.com/Hansen8601/control4-mediaplayer/blob/main/Control4AmpCard.png))
+![MyCard](https://github.com/Hansen8601/control4-mediaplayer/blob/f7d66aa66f89b2b0bcf36ea5393bb76a07da0f32/Control4AmpCard.png)
