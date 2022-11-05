@@ -5,8 +5,6 @@ from .control4Amp import control4AmpChannel
 import logging
 import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
-#import socket
-#import random
 
 from homeassistant.components.media_player import (
     ENTITY_ID_FORMAT,
@@ -78,6 +76,8 @@ class Control4MediaPlayer(MediaPlayerEntity):
         #self.hass = hass
         self._domain = __name__.split(".")[-2]
         self._name = name
+        self._source = 1
+        self._source_list = ['1','2','3','4']
         self._on_volume = on_volume / 100
         self._state = STATE_OFF
         self._available = True
@@ -108,6 +108,14 @@ class Control4MediaPlayer(MediaPlayerEntity):
         return self._state
 
     @property
+    def source(self):
+        return self._source
+
+    @property
+    def source_list(self):
+        return self._source_list
+
+    @property
     def volume_level(self):
         """Volume level of the media player (0..1)."""
         return self._ampChannel.volume 
@@ -116,6 +124,12 @@ class Control4MediaPlayer(MediaPlayerEntity):
     def supported_features(self):
         """Flag media player features that are supported."""
         return SUPPORT_CONTROL4
+
+    async def async_select_source(self,source):
+        self._source = source
+        self._ampChannel.source = source
+        self.schedule_update_ha_state()
+        _LOGGER.warn("Source set to " + str(self._ampChannel.source))
 
     async def async_turn_on(self):
         _LOGGER.warn("Turning on...")
@@ -142,7 +156,6 @@ class Control4MediaPlayer(MediaPlayerEntity):
         _LOGGER.warn("volume set to " + str(self._ampChannel.volume))
 
     async def async_set_volume_level(self, volume):
-        _LOGGER.warn("async Changing volume to " + str(volume) + " ...")
         self._ampChannel.volume  = volume 
         self.schedule_update_ha_state()
         _LOGGER.warn("volume set to " + str(self._ampChannel.volume))
