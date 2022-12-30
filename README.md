@@ -22,7 +22,7 @@ media_player:
 * **on_volume** (Optional): Default volume for the amp to turn on to. 5 if omitted
 
 ### Work to do
-The component doesn't support sources yet. If there's an interest, I'll add it. For my configuration, I only use source 1.
+Sources are labled in Home Assistant as 1,2,3,4 vs. text names. If there's interest, I'll look into adding names to the sources via the configuration.yaml file.
 
 #### My Home Assistant Card
 ![MyCard](https://github.com/Hansen8601/control4-mediaplayer/blob/f7d66aa66f89b2b0bcf36ea5393bb76a07da0f32/Control4AmpCard.png)
