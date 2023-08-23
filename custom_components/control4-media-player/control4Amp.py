@@ -11,15 +11,17 @@ def send_udp_command(command, host, port):
     sock.setblocking(0)
     sock.sendto( bytes(COMMAND, "utf-8"), (host, port))
 
-    #r, _, _ = select.select([sock.conn], [], [])
-    #if r:
-    #    # ready to receive
-    #    received = str(sock.conn.recv(1024),"utf-8")
-
-
-    ready = select.select([sock], [], [], 1)
-    if ready[0]:
-        received = str(sock.recv(1024), "utf-8")
+    try:
+        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        sock.settimeout(1)
+        sock.sendto(bytes(COMMAND, "utf-8"), (host, port))
+        data, _ = sock.recvfrom(1024)
+        received = str(data, "utf-8")
+    except socket.timeout:
+        received = "Timeout occurred during data reception"
+    except Exception as e:
+        received = f{e}
+    finally:
         sock.close()
 
     return received
