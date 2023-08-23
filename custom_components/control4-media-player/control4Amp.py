@@ -20,7 +20,7 @@ def send_udp_command(command, host, port):
     except socket.timeout:
         received = "Timeout occurred during data reception"
     except Exception as e:
-        received = f{e}
+        received = {e}
     finally:
         sock.close()
 
