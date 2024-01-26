@@ -9,16 +9,8 @@ import voluptuous as vol
 from homeassistant.components.media_player import (
     ENTITY_ID_FORMAT,
     PLATFORM_SCHEMA,
-    MediaPlayerEntity
-)
-
-from homeassistant.components.media_player.const import (
-    SUPPORT_TURN_OFF,
-    SUPPORT_TURN_ON,  
-    SUPPORT_VOLUME_SET,
-    SUPPORT_VOLUME_STEP,
-    SUPPORT_VOLUME_MUTE,
-    SUPPORT_SELECT_SOURCE
+    MediaPlayerEntity,
+    MediaPlayerEntityFeature
 )
 
 from homeassistant.const import (
@@ -42,14 +34,12 @@ DEFAULT_PORT = 8750
 DEFAULT_VOLUME = 5
 DEFAULT_SOURCE_LIST = ['1','2','3','4']
 
-SUPPORT_CONTROL4 = (
-    SUPPORT_VOLUME_SET \
-    | SUPPORT_VOLUME_STEP \
-    | SUPPORT_TURN_ON \
-    | SUPPORT_TURN_OFF \
-    | SUPPORT_SELECT_SOURCE \
-    | SUPPORT_VOLUME_MUTE
-)
+CONTROL4 = MediaPlayerEntityFeature.VOLUME_SET \
+         | MediaPlayerEntityFeature.VOLUME_STEP \
+         | MediaPlayerEntityFeature.TURN_ON \
+         | MediaPlayerEntityFeature.TURN_OFF \
+         | MediaPlayerEntityFeature.SELECT_SOURCE \
+         | MediaPlayerEntityFeature.VOLUME_MUTE
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
