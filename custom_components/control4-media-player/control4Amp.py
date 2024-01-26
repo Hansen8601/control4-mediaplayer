@@ -80,6 +80,7 @@ class control4AmpChannel(object):
         del self._volume
 
     def turn_on(self):
+        send_udp_command("c4.amp.psave 00 00", self._host, self._port)
         return send_udp_command("c4.amp.out 0" + str(self._channel) + " 0" + str(self._source), self._host, self._port)
 
     def turn_off(self):
