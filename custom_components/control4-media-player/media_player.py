@@ -34,7 +34,7 @@ DEFAULT_PORT = 8750
 DEFAULT_VOLUME = 5
 DEFAULT_SOURCE_LIST = ['1','2','3','4']
 
-CONTROL4 = MediaPlayerEntityFeature.VOLUME_SET \
+SUPPORT_CONTROL4 = MediaPlayerEntityFeature.VOLUME_SET \
          | MediaPlayerEntityFeature.VOLUME_STEP \
          | MediaPlayerEntityFeature.TURN_ON \
          | MediaPlayerEntityFeature.TURN_OFF \
