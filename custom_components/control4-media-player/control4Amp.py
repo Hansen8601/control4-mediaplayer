@@ -9,6 +9,7 @@ def send_udp_command(command, host, port):
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.settimeout(1)
+        sock.setblocking(0)
         sock.sendto(bytes(COMMAND, "utf-8"), (host, port))
         data, _ = sock.recvfrom(1024)
         received = str(data, "utf-8")
