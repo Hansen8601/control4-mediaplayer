@@ -6,11 +6,6 @@ def send_udp_command(command, host, port):
     COUNTER = "0s2a" + str(random.randint(10, 99))
     COMMAND = COUNTER + " " + command + " \r\n"
 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.settimeout(1)
-    sock.setblocking(0)
-    sock.sendto( bytes(COMMAND, "utf-8"), (host, port))
-
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.settimeout(1)
