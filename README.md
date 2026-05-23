@@ -1,5 +1,16 @@
 # Control 4 Matrix Amp [[Home Assistant](https://www.home-assistant.io/) Component]
 
+> [!IMPORTANT]
+> ## ⚠️ This Repo Has Been Superseded
+>
+> This project has been forked and significantly improved by [@OtisPresley](https://github.com/OtisPresley).
+> His version includes a full UI-based config flow, bulk zone setup, per-zone power-on volume,
+> source sync across all zones, automatic entity cleanup, HACS support, and much more.
+>
+> **👉 Please use his version instead: [OtisPresley/control4-mediaplayer](https://github.com/OtisPresley/control4-mediaplayer)**
+>
+> This repo is no longer actively maintained.
+
 #### Installation
 
 To install, simply copy the control4-mediaplayer folder into your CUSTOM_COMPONENTS folder and restart Home Assistant.
